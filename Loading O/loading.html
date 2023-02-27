@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title></title>
+</head>
+<body>
+	<div class="progress-bar">
+	<span class="number" data-value="100"></span>
+	<svg height="150" width="150" class="circle">
+		<circle cx="75" cy="75" r="65" stroke-width="20" fill="none" />
+	</svg>
+	<a href="Responsive-Login-Form-master\index.html"></a>
+</div>
+<script>
+	const number = document.querySelector(".number");
+const valueNumber = Number(number.getAttribute("data-value"));
+
+let counter = 0;
+
+const time = () => {
+	setInterval(() => {
+		if (counter !== valueNumber) {
+			counter++;
+			number.innerHTML = `${counter}%`;
+		}
+	}, 100);
+};
+
+time();
+</script>
+</body>
+</html>

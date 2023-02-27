@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;900&display=swap");
+
+:root {
+	--primary: #02ada5;
+	--secondary: #015e5a;
+	--dark: #101010;
+	--gray: #191919;
+	--light: #fcfcfc;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	font-size: 1.2em;
+	line-height: 1.6;
+	background: var(--dark);
+	overflow-x: hidden;
+	min-height: 100vh;
+	min-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.progress-bar {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	color: var(--primary);
+	outline: 4px solid var(--primary);
+	outline-offset: -1px;
+}
+
+.progress-bar::after,
+.number {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.number {
+	font-size: 21px;
+	font-weight: bold;
+}
+
+.circle {
+	stroke: var(--secondary);
+	stroke-dasharray: 410;
+	stroke-dashoffset: 410;
+	animation: barFill 10s linear forwards;
+	transform: rotate(-90deg);
+}
+
+@keyframes barFill {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
